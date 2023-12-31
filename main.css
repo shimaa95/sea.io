@@ -1,0 +1,83 @@
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+section {
+  height: 100vh;
+  max-width: 1000px;
+}
+
+.wrapper {
+  margin: 3rem 2rem;
+  display: grid;
+  grid-template-areas:
+    "top top "
+    "header header "
+    "content content "
+    "sea1 sea1 "
+    " footer footer2";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 8rem) repeat(3, 13rem);
+  gap: 1rem;
+}
+
+h1 {
+  grid-area: header;
+  font-size: 7rem;
+  margin: 0;
+  margin-top: 1.5rem;
+}
+.bolds {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.content {
+  grid-area: content;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.2rem;
+  text-align: left;
+  align-items: center;
+}
+.top {
+  grid-area: top;
+  display: flex;
+  gap: 2rem;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+.footer {
+  grid-area: sea1;
+}
+p {
+  font-size: 1.2rem;
+}
+@media only screen and (min-width: 1000px) {
+  .wrapper {
+    grid-template-areas:
+      "top top top  "
+      "img header header "
+      "img content content "
+      "img footer  footer2";
+
+    grid-template-columns: repeat(3, 25.4rem);
+    grid-template-rows: repeat(3, 100px) 200px;
+    gap: 2em;
+  }
+
+  .top {
+    grid-area: top;
+  }
+  h1 {
+    margin: 0;
+    margin-top: unset;
+  }
+  .footer {
+    grid-area: img;
+    height: 100%s;
+  }
+}
